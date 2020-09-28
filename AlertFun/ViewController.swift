@@ -9,6 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // task: in IB, add a UI text field as wide as screen
+    // ignore layout warnings...
+    // add button below that says 'echo back'
+    // wer up the connections for an IBOutlet and an IBAction in ViewController
+    // print out log message proving IBAction is set up
+    
+    @IBOutlet var textField: UITextField!
+    
+    @IBAction func buttonPressed() {
+        print("buttonPress")
+        print("text field has: \(textField.text)")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
