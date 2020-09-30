@@ -19,8 +19,19 @@ class ViewController: UIViewController {
     @IBOutlet var textField: UITextField!
     
     @IBAction func buttonPressed() {
-        print("buttonPress")
-        print("text field has: \(textField.text)")
+        if let text = textField.text {
+            print(text)
+            
+            let alertController = UIAlertController(title: "Echo Back", message: text, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (action) -> Void in
+                print("Okay pressed")
+                self.textField.text = ""
+            }))
+            present(alertController, animated: true, completion: { () -> Void in
+                print("Alert presented to user")
+            })
+            
+        }
     }
 
     override func viewDidLoad() {
